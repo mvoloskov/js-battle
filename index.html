@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>JS Battle</title>
+</head>
+<body>
+	<main>
+		<section class="characters">
+			<section class="characters__player">
+				<section class="characters__player__settings">
+					<section class="characters__player__settings__strength">
+						<button class="characters__player__settings__strength__dec">
+							-
+						</button>
+						<input class="characters__player__settings__strength__points" id="player-strength" type="text" disabled>
+						<button class="characters__player__settings__strength__inc">
+							+
+						</button>
+						<label for="player-strength">Strength</label>
+					</section>
+					<section class="characters__player__settings__dexterity">
+						<button class="characters__player__settings__dexterity__dec">
+							-
+						</button>
+						<input class="characters__player__settings__dexterity__points" id="player-dexteity" type="text" disabled>
+						<button class="characters__player__settings__dexterity__inc">
+							+
+						</button>
+						<label for="player-dexterity">Dexterity</label>
+					</section>
+					<section class="characters__player__settings__health">
+						<button class="characters__player__settings__health__dec">
+							-
+						</button>
+						<input class="characters__player__settings__health__points" id="player-health" type="text" disabled>
+						<button class="characters__player__settings__health__inc">
+							+
+						</button>
+						<label for="player-health">Health</label>
+					</section>
+				</section>
+				<input class="characters__player__free-points" id="player-free-points" type="text" disabled>
+				<label for="player-free-points">Free points</label>
+				<img class="characters__player__picture" src="img/player.jpg" width="500" height="500">
+			</section>
+			<section class="characters__enemy">
+				<form class="characters__enemy__settings">
+					<section class="characters__enemy__settings__strength">
+						<input class="characters__enemy__settings__strength__points" id="enemy-strength" type="text" disabled>
+						<label for="enemy-strength">Strength</label>
+					</section>
+					<section class="characters__enemy__settings__dexterity">
+						<input class="characters__enemy__settings__dexterity__points" id="enemy-dexteity" type="text" disabled>
+						<label for="enemy-dexterity">Dexterity</label>
+					</section>
+					<section class="characters__enemy__settings__health">
+						<input class="characters__enemy__settings__health__points" id="enemy-health" type="text" disabled>
+						<label for="enemy-health">Health</label>
+					</section>
+				</form>
+				<img class="characters__enemy__picture" src="img/enemy.png" width="500" height="500">
+			</section>
+		</section>
+		<section class="game-field">
+			<button class="game-field__fight-button" disabled>Fight</button>
+			<textarea class="game-field__console" disabled></textarea>
+		</section>
+	</main>
+	<script type="text/javascript" src="js/game.js"></script>
+</body>
+</html>
