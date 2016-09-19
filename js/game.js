@@ -24,6 +24,7 @@ function Character () {
 			} else {
 				this._health = 0;
 			}
+		}
 	}
 	
 	this.renewFields = function () {
