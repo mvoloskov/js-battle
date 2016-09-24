@@ -11,31 +11,31 @@
 			<section class="player">
 				<section class="settings">
 					<section class="settings__strength">
-						<button class="settings__dec">
+						<button class="settings__dec" id="player-strength-dec">
 							-
 						</button>
 						<input class="settings__points" id="player-strength" type="text" disabled>
-						<button class="settings__inc">
+						<button class="settings__inc" id="player-strength-inc">
 							+
 						</button>
 						<label for="player-strength">Strength</label>
 					</section>
 					<section class="settings__dexterity">
-						<button class="settings__dec">
+						<button class="settings__dec" id="player-dexterity-dec">
 							-
 						</button>
 						<input class="settings__points" id="player-dexteity" type="text" disabled>
-						<button class="settings__inc">
+						<button class="settings__inc" id="player-dexterity-inc">
 							+
 						</button>
 						<label for="player-dexterity">Dexterity</label>
 					</section>
 					<section class="settings__health">
-						<button class="settings__dec">
+						<button class="settings__dec" id="player-health-dec">
 							-
 						</button>
 						<input class="settings__points" id="player-health" type="text" disabled>
-						<button class="settings__inc">
+						<button class="settings__inc" id="player-health-inc">
 							+
 						</button>
 						<label for="player-health">Health</label>
@@ -64,8 +64,8 @@
 			</section>
 		</section>
 		<section class="game-field">
-			<button class="game-field__fight-button">Fight</button>
-			<textarea class="game-field__console" disabled></textarea>
+			<button class="game-field__fight-button" id="fight-button">Fight</button>
+			<textarea class="game-field__console" id="battlelog" disabled></textarea>
 		</section>
 	</main>
 	<script type="text/javascript" src="js/game.js"></script>
