@@ -38,19 +38,19 @@ function Player () {
 	
 	this._freePoints = 0;
 	
-	this.strengthDecButton  = document.querySelector(".characters__player__settings__strength__dec");
-	this.strengthField      = document.querySelector(".characters__player__settings__strength__points");
-	this.strengthIncButton  = document.querySelector(".characters__player__settings__strength__inc");
+	this.strengthDecButton  = document.getElementById("player-strength-dec");
+	this.strengthField      = document.getElementById("player-strength");
+	this.strengthIncButton  = document.getElementById("player-strength-inc");
 	
-	this.dexterityDecButton = document.querySelector(".characters__player__settings__dexterity__dec");
-	this.dexterityField     = document.querySelector(".characters__player__settings__dexterity__points");
-	this.dexterityIncButton = document.querySelector(".characters__player__settings__dexterity__inc");
+	this.dexterityDecButton = document.getElementById("player-dexterity-dec");
+	this.dexterityField     = document.getElementById("player-dexterity");
+	this.dexterityIncButton = document.getElementById("player-dexterity-inc");
 	
-	this.healthDecButton    = document.querySelector(".characters__player__settings__health__dec");
-	this.healthField        = document.querySelector(".characters__player__settings__health__points");
-	this.healthIncButton    = document.querySelector(".characters__player__settings__health__inc");
+	this.healthDecButton    = document.getElementById("player-health-dec");
+	this.healthField        = document.getElementById("player-health");
+	this.healthIncButton    = document.getElementById("player-health-inc");
 	
-	this.freePointsField    = document.querySelector(".characters__player__free-points");
+	this.freePointsField    = document.getElementById("player-free-points");
 	
 	this._oldRenewFields = this.renewFields;
 	this.renewFields = function () {
@@ -119,9 +119,9 @@ function Player () {
 function Enemy () {
 	Character.apply(this, arguments);
 	
-	this.strengthField 	= document.querySelector(".characters__enemy__settings__strength__points");
-	this.dexterityField = document.querySelector(".characters__enemy__settings__dexterity__points");
-	this.healthField 	= document.querySelector(".characters__enemy__settings__health__points");
+	this.strengthField 	= document.getElementById("enemy-strength");
+	this.dexterityField = document.getElementById("enemy-dexterity");
+	this.healthField 	= document.getElementById("enemy-health");
 	
 	var _points = 15;
 	this._health = getRandInt(1, _points - 3);
@@ -135,7 +135,7 @@ function Enemy () {
 }
 
 function Judge (player, enemy) {
-	var battleLog = document.querySelector(".game-field__console");
+	var battleLog = document.getElementById("battlelog");
 	
 	var self = this;
 	
@@ -210,7 +210,7 @@ function Judge (player, enemy) {
 	}
 	
 	this.watchStartButton = function () {
-		var startButton = document.querySelector(".game-field__fight-button");
+		var startButton = document.getElementById("fight-button");
 		
 		startButton.onclick = function () {
 			if ( player._freePoints === 0 ) {
