@@ -1,3 +1,20 @@
+@keyframes player-attack {
+	from {transform: translateX(0px);}
+	50% {transform: translateX(50px);}
+	to   {transform: translateX(0px);}
+}
+
+@keyframes enemy-attack {
+	from {transform: translateX(0px);}
+	50% {transform: translateX(-50px);}
+	to   {transform: translateX(0px);}
+}
+
+@keyframes character-wins {
+	from {transform: translateY(0px);}
+	to   {transform: translateY(-50px);}
+}
+
 body {
 	width: 100%;
 	margin: 0;
@@ -13,6 +30,24 @@ main {
 
 .characters {
 	display: flex;
+}
+
+.enemy__picture,
+.player__picture {
+	z-index: -1;
+	animation-duration: .2s;  /*  This value is hard-coded at JS code  */
+}
+
+.enemy__picture--attack {
+	animation-name: enemy-attack;
+}
+
+.player__picture--attack {
+	animation-name: player-attack;
+}
+
+.character--win {
+	animation: character-wins .3s infinite alternate;
 }
 
 .player,
