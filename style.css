@@ -15,16 +15,15 @@ main {
 	display: flex;
 }
 
-.characters__player,
-.characters__enemy {
+.player,
+.enemy {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 }
 
-.characters__player__settings,
-.characters__enemy__settings {
+.settings {
 	min-height: 80px;
 	margin-bottom: 10px;
 	
