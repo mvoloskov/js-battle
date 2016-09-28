@@ -204,7 +204,7 @@ function Judge (player, enemy) {
 			if ( player._health === 0 ) {
 				return "Monster wins!\n";
 			} else {
-				return "Player wins!\n";
+				return "You win!\n";
 			}
 		}
 	}
