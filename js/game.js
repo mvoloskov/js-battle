@@ -8,16 +8,17 @@ function Character () {
 	this._health     = 5;
 	this._max_points = 15;
 	
-	this.hitOpponent = function (character) {
-		character.reportHitReceived(this);
+	this.hitOpponent = function (enemy) {
+		enemy.reportHitReceived(this);
 	}
 	
-	this.reportHitReceived = function (character) {
-		if ( getRandInt(0, character._dexterity) > getRandInt(0, this._dexterity) ) {
-			if ( this._health >= character._strength ) {
-				this._health -= character._strength;
+	this.reportHitReceived = function (enemy) {
+		if ( getRandInt(0, enemy._dexterity) > getRandInt(0, this._dexterity) ) {
+			if ( this._health >= enemy._strength ) {
+				this._health -= enemy._strength;
 			} else {
 				this._health = 0;
+				enemy.picture.classList.add("character--win");
 			}
 			//judge.reportHit(this, true);
 		} else {
@@ -51,11 +52,21 @@ function Player () {
 	this.healthIncButton    = document.getElementById("player-health-inc");
 	
 	this.freePointsField    = document.getElementById("player-free-points");
+	this.picture            = document.getElementById("player-picture");
 	
 	this._oldRenewFields = this.renewFields;
 	this.renewFields = function () {
 		this._oldRenewFields();
 		this.freePointsField.value = this._freePoints;
+	}
+
+	this._oldHitOpponent = this.hitOpponent;
+	this.hitOpponent = function (character) {
+		this._oldHitOpponent(character);
+		this.picture.classList.add("player__picture--attack");
+		window.setTimeout(function () {
+			self.picture.classList.remove("player__picture--attack");
+		}, 200);
 	}
 	
 	this.decStrength = function () {
@@ -118,11 +129,22 @@ function Player () {
 
 function Enemy () {
 	Character.apply(this, arguments);
+	var self = this;
 	
 	this.strengthField 	= document.getElementById("enemy-strength");
 	this.dexterityField = document.getElementById("enemy-dexterity");
 	this.healthField 	= document.getElementById("enemy-health");
+	this.picture        = document.getElementById("enemy-picture");
 	
+	this._oldHitOpponent = this.hitOpponent;
+	this.hitOpponent = function (character) {
+		this._oldHitOpponent(character);
+		this.picture.classList.add("enemy__picture--attack");
+		window.setTimeout(function () {
+			self.picture.classList.remove("enemy__picture--attack");
+		}, 200);
+	}
+
 	var _points = 15;
 	this._health = getRandInt(1, _points - 3);
 	_points -= this._health;
